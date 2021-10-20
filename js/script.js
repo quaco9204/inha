@@ -2,6 +2,10 @@
 // html 태그 구조 (DOM구조) 가 완료되었을때 실행  
 $(document).ready(function () {
     
+    // 안내창 닫기 modal close
+    $('.modal').click(function () {
+        $(this).fadeOut();
+    });
 
     //쿠키 가져오기
     function getCookie(cookieName) {
@@ -361,6 +365,21 @@ $(document).ready(function () {
         });
     });
 
+    //사용자 메뉴 관련
+    let user_menu_close = $('.user-menu-close');
+    let user_menu = $('.user-menu');
+    let user_bt = $('.user');
+    user_bt.click(function(event){
+        // href를 막는다.
+        event.preventDefault();
+        user_menu.stop().slideDown('fast');
+        $(this).addClass('user-focus');
+    });
+
+    user_menu_close.click(function(){
+        user_menu.stop().slideUp('fast');
+        user_bt.removeClass('user-focus');
+    });
 
     new Swiper('.sw-top-banner', {
         loop: true,
