@@ -344,6 +344,45 @@ $(document).ready(function () {
         // }
     });
 
+    
+    //main - submenu 기능 (메인 서브메뉴 기능) 수정필요
+    //메뉴 저장   
+    let main_menu_list = $('.mainmenu');
+    let sub_menu_link = $('.sub-menu-link');
+    $.each(main_menu_list, function(index, item){
+        $(this).click(function(e){
+            // href 막기
+            e.preventDefault();
+            // 일단 모든 클래스 제거
+            main_menu_list.removeAttr('class');
+            
+            // 클릭된 자신만 클래스 추가
+            $(this).addClass('main-menu-list-focus');
+            $(this).addClass('main-menu-icon-' + (index+1));
+
+            // 내용 처리
+            sub_menu_link.removeClass('sub-menu-link-focus');
+            sub_menu_link.eq(index).addClass('sub-menu-link-focus');
+        });
+    }); 
+
+    //gnb sub-menu 관련
+    let sub_menu_close = $('');
+    let sub_menu = $('.sub-menu');
+    let sub_bt = $('.mainmenu');
+    sub_bt.click(function(event){
+        // href를 막는다.
+        event.preventDefault();
+        sub_menu.stop().slideDown('fast');
+        $(this).addClass('sub-focus');
+    });
+
+    sub_menu_close.click(function(){
+        sub_menu.stop().slideUp('fast');
+        sub_bt.removeClass('sub-focus');
+    });
+
+
     //사용자 메뉴 기능
     // 메뉴 저장
     let user_menu_list = $('.user-menu-list > li > a');
@@ -363,7 +402,7 @@ $(document).ready(function () {
             user_menu_link.removeClass('user-menu-link-focus');
             user_menu_link.eq(index).addClass('user-menu-link-focus');
         });
-    });
+    });    
 
     //사용자 메뉴 관련
     let user_menu_close = $('.user-menu-close');

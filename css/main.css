@@ -767,7 +767,8 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    display: none;
+    /* 수정필요 display-none-script수정 */
+    display: block;
 }
 
 .sub-left-cate {
@@ -868,9 +869,10 @@ body {
     border-right: 1px solid #d3d3d3
 }
 
-.sub-menu {
+.sub-menu {    
     position: relative;
-    display: none;
+    /* 수정필요 display-none-script수정 */
+    display: block;
 }
 
 .sub-menu-title {
