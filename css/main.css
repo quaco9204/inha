@@ -767,14 +767,20 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    /* 수정필요 display-none-script수정 */
-    display: block;
+    width: 100%;
+    /* 수정필요 display-none-script*/
+    display: none;
+}
+
+/* sub-left-list>li = .sub-left-link :script로처리 */
+.sub-left-link-focus {
+    display: block !important;
 }
 
 .sub-left-cate {
     position: relative;
     width: 100%;
-    height: 75px;
+    /* height: 72px; */
     overflow: hidden;
     padding-top: 35px;
 
@@ -784,14 +790,14 @@ body {
     line-height: 35px;
     letter-spacing: normal;
 
-    margin-bottom: 25px;
+    padding-bottom: 25px;
 }
 
 .sub-left-cate::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 15px;
     display: block;
     width: 34px;
     height: 2px;
@@ -801,40 +807,48 @@ body {
 
 .sub-left-list>li:nth-child(1)>.sub-left-cate {
     background: url('../images/ul_2_1.png') no-repeat;
-    background-position: 105% 20px;
+    background-position: 105% 24px;
 }
 
 .sub-left-list>li:nth-child(2)>.sub-left-cate {
     background: url('../images/ul_2_2.png') no-repeat;
-    background-position: 105% 20px;
+    background-position: 105% 24px;
 }
 
 .sub-left-list>li:nth-child(3)>.sub-left-cate {
     background: url('../images/ul_2_3.png') no-repeat;
-    background-position: 105% 20px;
+    background-position: 105% 24px;
 }
 
 .sub-left-list>li:nth-child(4)>.sub-left-cate {
     background: url('../images/ul_2_4.png') no-repeat;
-    background-position: 105% 20px;
+    background-position: 105% 24px;
 }
 
 .sub-left-list>li:nth-child(5)>.sub-left-cate {
     background: url('../images/ul_2_5.png') no-repeat;
-    background-position: 105% 20px;
+    background-position: 105% 24px;
 }
 
 .sub-left-list>li:nth-child(6)>.sub-left-cate {
     background: url('../images/ul_2_6.png') no-repeat;
-    background-position: 105% 20px;
+    background-position: 105% 24px;
 }
 
 .sub-left-list>li:nth-child(7)>.sub-left-cate {
     background: url('../images/ul_2_7.png') no-repeat;
-    background-position: 105% 20px;
+    background-position: 105% 24px;
+}
+
+.sub-left-cate>h2{
+    position: relative;
+    display: inline-block;
+    padding-bottom: 50px;
 }
 
 .sub-left-txt {
+    position: relative;
+    display: inline-block;
     font-size: 14px;
     color: #666;
     line-height: 1.25;
@@ -847,6 +861,14 @@ body {
     float: right;
     width: 1000px;
     background-color: #fff;
+}
+
+.sub-right-menu {
+    display: none;
+}
+
+.sub-right-menu-focus{
+    display: block;
 }
 
 .sub-right-list {
@@ -871,7 +893,10 @@ body {
 
 .sub-menu {    
     position: relative;
-    /* 수정필요 display-none-script수정 */
+    /* 수정필요 display-none-script*/
+    display: none;
+}
+.sub-menu-focus{
     display: block;
 }
 
