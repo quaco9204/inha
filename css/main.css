@@ -737,6 +737,34 @@ body {
     opacity: 1;
     width: calc(100% - 14px);
 }
+.sub-menu-close-box{
+    position: relative;
+    float:right;
+
+    display: block;
+    width: 129px;
+    height: 60px;
+    background: #fff;
+    transition: background 0.5s;
+    z-index: 999;
+}
+.sub-menu-close{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: #fff url('../images/menuClose.png') no-repeat center;
+    border: 1px solid #000;
+    cursor:pointer;
+
+    z-index: 999;
+}
+.sub-menu-close-focus{
+    border: #0092dd;
+}
 
 .header-sub {
     position: relative;
