@@ -350,6 +350,7 @@ $(document).ready(function () {
     let main_menu_list = $('.mainmenu');
     let sub_left_link = $('.sub-left-list>li');
     let sub_right_menu = $('.sub-right-menu');
+    let sub_menu_close_b = $('.sub-menu-close');
     $.each(main_menu_list, function(index, item){
         $(this).click(function(e){
             // href 막기
@@ -357,13 +358,16 @@ $(document).ready(function () {
             // 일단 모든 클래스 제거
             sub_left_link.removeClass('sub-left-link-focus');
             sub_right_menu.removeClass('sub-right-menu-focus');
+            // sub_meunu_close 작동
+            sub_menu_close.addClass('sub-menu-close-focus');
+            sub_menu_close_b.addClass('sub-menu-close-focus');
             
             // 클릭된 자신과같은 순서의 sub_left_link 클래스 추가
             sub_left_link.eq(index).addClass('main-menu-link');
             // $(this).addClass('main-menu-icon-' + (index+1));
 
             // 내용 처리
-            sub_left_link.removeClass('sub-menu-link-focus');
+            sub_left_link.removeClass('sub-left-link-focus');
             sub_right_menu.removeClass('sub-right-menu-focus');
             sub_left_link.eq(index).addClass('sub-left-link-focus');
             sub_right_menu.eq(index).addClass('sub-right-menu-focus');
@@ -371,7 +375,7 @@ $(document).ready(function () {
     }); 
 
     //gnb sub-menu 관련
-    let sub_menu_close = $('');
+    let sub_menu_close = $('.sub-menu-close-box');
     let sub_menu = $('.sub-menu');
     let sub_bt = $('.mainmenu');
     sub_bt.click(function(event){
@@ -382,8 +386,15 @@ $(document).ready(function () {
     });
 
     sub_menu_close.click(function(){
+        //애니메이션
         sub_menu.stop().slideUp('fast');
+        //클래스제거
         sub_bt.removeClass('sub-menu-focus');
+        sub_left_link.removeClass('sub-left-link-focus');
+        sub_right_menu.removeClass('sub-right-menu-focus');
+        //close 버튼 제거
+        sub_menu_close.removeClass('sub-menu-close-focus');
+        sub_menu_close_b.removeClass('sub-menu-close-focus');
     });
 
 

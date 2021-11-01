@@ -741,7 +741,7 @@ body {
     position: relative;
     float:right;
 
-    display: block;
+    display: none;
     width: 129px;
     height: 60px;
     background: #fff;
@@ -753,17 +753,22 @@ body {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    display: block;
+    display: none;
     width: 32px;
     height: 32px;
     background: #fff url('../images/menuClose.png') no-repeat center;
     border: 1px solid #000;
     cursor:pointer;
 
+    transition: background 0.3s, border-color 0.3s;
     z-index: 999;
 }
+.sub-menu-close-box:hover .sub-menu-close{
+    background: #fff url('../images/menuClose_b.png') no-repeat center;
+    border-color: #0092dd;    
+}
 .sub-menu-close-focus{
-    border: #0092dd;
+    display: block;
 }
 
 .header-sub {
@@ -796,7 +801,6 @@ body {
     left: 0;
     top: 0;
     width: 100%;
-    /* 수정필요 display-none-script*/
     display: none;
 }
 
@@ -921,7 +925,6 @@ body {
 
 .sub-menu {    
     position: relative;
-    /* 수정필요 display-none-script*/
     display: none;
 }
 .sub-menu-focus{
